@@ -1,0 +1,206 @@
+$text-color: #000;
+$white: #fff;
+$background-color: #ddd;
+$header-background : #ddd;
+$accent-color: red;
+
+@function get-gutter($x : 1) {
+    @return $x * 8px;
+}
+
+
+/*=========================
+        General Styles
+ ==========================*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.icon {
+    width: 48px;
+    height: 48px;
+}
+
+a {
+    text-decoration: none;
+    color: $text-color;
+}
+
+body {
+    font-size: 16px;
+
+}
+
+
+header {
+    display: flex;
+    padding: get-gutter(1);
+    box-shadow: 1px 1px 2px rgba(black, 0.2);
+
+    .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .org-info{
+        margin: 0;
+        padding: 0;
+        margin-left: get-gutter(1);
+        .org-name{
+            font-size: 1.5em;
+        }
+        span{
+            display: none;
+        }
+        .tagline{
+            display: none;
+        }
+    }
+
+    //.org-name {
+    //    //display: none;
+    //    font-size: 1.2em;
+    //}
+    //
+    //.tagline {
+    //    display: none;
+    //}
+
+}
+
+
+/*=========================
+        Nav
+ ==========================*/
+
+
+#main_nav_toggler{
+    width: 35px;
+    height: 35px;
+    fill: $text-color;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-right: get-gutter(3);
+    margin-top: get-gutter(2.5);
+    z-index: 999;
+    transition: transform 0.5s linear;
+
+    &:hover {
+        fill: $accent-color;
+        cursor: pointer;
+    }
+
+    &.stricky {
+        box-shadow: 1px 1px 2px black;
+    }
+
+    &.hidden {
+        transform: translateY(-100%);
+    }
+
+    &.visible {
+        transform: translateY(0);
+    }
+}
+
+#main_sticky_nav{
+    &.collapse{
+        transform: translateX(0);
+    }
+
+    padding-top: get-gutter(6);
+    background: $background-color;
+    height: 100%;
+    min-width: 300px;
+    transform: translateX(300px);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 900;
+
+    .sub-nav-toggler{
+        //display: none;
+        width: 18px;
+        height: 18px;
+        transform: rotate(90deg);
+    }
+
+    ul{
+        display: flex;
+        margin: 0 auto;
+        padding: 0;
+        flex-direction: column;
+        list-style: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5em;
+        li{
+            margin: get-gutter(1) 0;
+        }
+
+        .sub-nav-menu{
+            font-size: 0.9em;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*=========================
+        Media Queries
+ ==========================*/
+@media (min-width: 480px) {
+    header{
+        .org-info{
+
+            .org-name{
+                span{
+                    display: inline-block;
+                }
+            }
+            .tagline{
+                display: block;
+            }
+        }
+    }
+
+}
