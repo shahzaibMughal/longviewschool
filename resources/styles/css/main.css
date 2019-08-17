@@ -7,8 +7,7 @@
   font-family: sans-serif; }
 
 .icon {
-  width: 48px;
-  height: 48px; }
+  font-size: 3em; }
 
 a {
   text-decoration: none;
@@ -40,7 +39,7 @@ header {
       display: none; }
 
 /*=========================
-        Nav
+        Main Nav
  ==========================*/
 #main_nav_toggler {
   width: 35px;
@@ -95,12 +94,71 @@ header {
       font-size: 0.9em; }
 
 /*=========================
+        Home Slider
+ ==========================*/
+.slider {
+  height: 250px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: grey; }
+
+/*=========================
+        Section Strategies
+ ==========================*/
+.strategies-section h2 {
+  font-size: 1.8em;
+  text-align: center;
+  margin: 16px 0; }
+.strategies-section .strategies-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 1100px;
+  margin: 0 auto; }
+.strategies-section .strategy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 16px;
+  margin: 8px; }
+  .strategies-section .strategy .heading {
+    font-size: 1.2em;
+    margin: 4px 0; }
+  .strategies-section .strategy:hover, .strategies-section .strategy:focus {
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    transform: scale(1.1); }
+    .strategies-section .strategy:hover .detail, .strategies-section .strategy:focus .detail {
+      display: block; }
+
+/*=========================
         Media Queries
  ==========================*/
 @media (min-width: 480px) {
   header .org-info .org-name span {
     display: inline-block; }
   header .org-info .tagline {
-    display: block; } }
+    display: block; }
+
+  .slider {
+    height: 300px; }
+
+  .strategies-section .strategies-container {
+    flex-direction: row;
+    flex-wrap: wrap; }
+    .strategies-section .strategies-container .strategy {
+      flex-basis: 40%; } }
+@media (min-width: 720px) {
+  .slider {
+    height: 400px; }
+
+  .strategies-section .strategies-container .strategy {
+    flex-basis: 25%; } }
+@media (min-width: 1024px) {
+  .strategies-section .strategies-container .strategy {
+    flex-basis: 20%; } }
 
 /*# sourceMappingURL=main.css.map */

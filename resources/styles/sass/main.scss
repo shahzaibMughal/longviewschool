@@ -3,6 +3,10 @@ $white: #fff;
 $background-color: #ddd;
 $header-background : #ddd;
 $accent-color: red;
+$max-width  : 1100px;
+
+
+
 
 @function get-gutter($x : 1) {
     @return $x * 8px;
@@ -19,8 +23,7 @@ $accent-color: red;
 }
 
 .icon {
-    width: 48px;
-    height: 48px;
+    font-size: 3em;
 }
 
 a {
@@ -78,10 +81,8 @@ header {
 
 
 /*=========================
-        Nav
+        Main Nav
  ==========================*/
-
-
 #main_nav_toggler{
     width: 35px;
     height: 35px;
@@ -159,6 +160,16 @@ header {
 
 
 
+/*=========================
+        Home Slider
+ ==========================*/
+.slider{
+    height: 250px;
+    width: 100%;
+    max-width: $max-width;
+    margin: 0 auto;
+    background: grey;
+}
 
 
 
@@ -167,6 +178,54 @@ header {
 
 
 
+
+
+/*=========================
+        Section Strategies
+ ==========================*/
+.strategies-section{
+    h2{
+        font-size: 1.8em;
+        text-align: center;
+        margin: get-gutter(2) 0;
+    }
+
+    .strategies-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        max-width: $max-width;
+        margin: 0 auto;
+    }
+
+    .strategy{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        padding: get-gutter(2);
+        margin: get-gutter(1);
+
+        .heading{
+            font-size: 1.2em;
+            margin: get-gutter(0.5) 0;
+
+        }
+
+
+
+
+        &:hover, &:focus{
+            box-shadow: 1px 1px 2px rgba(black,0.8);
+            transform: scale(1.1);
+            .detail{
+                display: block;
+            }
+        }
+    }
+}
 
 
 
@@ -203,4 +262,44 @@ header {
         }
     }
 
+
+    .slider{
+        height: 300px;
+    }
+
+
+    .strategies-section .strategies-container{
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .strategy{
+            flex-basis: 40%;
+        }
+
+    }
+
 }
+@media (min-width: 720px) {
+
+    .slider{
+        height: 400px;
+    }
+    .strategies-section .strategies-container{
+
+        .strategy{
+            flex-basis: 25%;
+        }
+
+    }
+}
+
+@media (min-width: 1024px) {
+    .strategies-section .strategies-container{
+
+        .strategy{
+            flex-basis: 20%;
+        }
+
+    }
+}
+
